@@ -9,8 +9,8 @@ import (
 
 func main(){
 	r:=gin.Default()
-	r.LoadHTMLGlob("assets/*")
-	r.Static("/static","./static")
+	r.LoadHTMLGlob("views/assets/*")
+	r.Static("/static","./views/static")
 
 	r.GET("/",controllers.Redirect)
 	r.GET("/corona",controllers.RenderHTML)

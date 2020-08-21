@@ -5,16 +5,16 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"projects/GinFramework/gin-Covid/data"
+	"projects/GinFramework/gin-Covid/models"
 	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/patrickmn/go-cache"
 )
 
-var t []data.TotalLst
-var c data.Country
-var resData data.Data
+var t []models.TotalLst
+var c models.Country
+var resData models.Data
  
 func handleErrPanic(err error) {
 	if err != nil {
