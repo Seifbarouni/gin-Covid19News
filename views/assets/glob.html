@@ -3,39 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/static/glob.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+
     <title>Covid19News</title>
   </head>
   <body>
-    <h1 class="ttle">Coronavirus Updates</h1>
-    <div class="globalinfo">
+    <div class="card" style="text-align: center;">
+      <div class="card-body">
+        <h5 class="card-title">Coronavirus Updates</h5>
+        <p class="card-text">
+          <ul class="list-group">
       {{range .T}}
-      <h2>
-        <ul>
-          Confirmed : {{.Confirmed}}
-        </ul>
-        <ul>
-          Recovered : {{.Recovered}}
-        </ul>
-        <ul>
-          Critical : {{.Critical}}
-        </ul>
-        <ul>
-          Deaths : {{.Deaths}}
-        </ul>
-      </h2>
-      {{end}}
+
+            <li class="list-group-item">Confirmed : {{.Confirmed}}</li>
+            <li class="list-group-item">Recovered : {{.Recovered}}</li>
+            <li class="list-group-item">Critical : {{.Critical}}</li>
+            <li class="list-group-item">Deaths : {{.Deaths}}</li>
+            {{end}}
+          </ul>
+        </p>
+        
+      </div>
     </div>
+  
 
     <br />
     <div class="countriesinfo">
-      <table align="center">
+      <table class="table">
         <tr>
-          <th>Location</th>
-          <th>Confirmed</th>
-          <th>Deaths</th>
-          <th>Recovered</th>
-          <th>Active</th>
+          <th scope="col">Location</th>
+          <th scope="col">Confirmed</th>
+          <th scope="col">Deaths</th>
+          <th scope="col">Recovered</th>
+          <th scope="col">Active</th>
         </tr>
         {{range .C.Data}}
         <tr>

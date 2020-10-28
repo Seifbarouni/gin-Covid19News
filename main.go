@@ -15,5 +15,5 @@ func main(){
 	r.GET("/",controllers.Redirect)
 	r.GET("/corona",controllers.RenderHTML)
 
-	r.Run()
+	r.Run(":8080")
 }
